@@ -1,34 +1,40 @@
 #!/bin/bash
 
-dif=0
-i=1
-x=0
-y=0
-sum=0
-tot=0
+#this is version 2.0
+
+declare -i dif=0
+declare -i i=1
+declare -i j=0
+declare -i k=0
+declare -i u=0
+declare -i x=0
+declare -i y=0
+declare -i sum=0
+declare -i tot=0
 
 echo "**** ABACUS PRACTICE!!! ****"
 echo ""
-echo "Enter your degree of difficulty (1-1000)"
+echo "Enter your degree of difficulty (1-10)"
 read dif
-#echo $dif
+((j = dif*dif))
 
 echo "Add this column of numbers"
 echo ""
+((k=dif+1))
 
-for i in {1..10}
+while [ $u -lt $k ]
 do
 ((x= $RANDOM % 256 ))
 ((y= $RANDOM % 243 ))
-((z= ($x * $dif) + $y))
-#echo $z
+((z= ($x * $j) + $y))
 printf '%10s\n' $z;
 ((sum=sum+z))
+u=$[$u+1]
 done
 
-#echo ""
-#echo $sum
-#echo ""
+echo ""
+echo $sum
+echo ""
 
 echo ""
 echo "What is the total?: "
