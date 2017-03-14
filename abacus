@@ -26,9 +26,9 @@ printf '%10s\n' $z;
 ((sum=sum+z))
 done
 
-echo ""
-echo $sum
-echo ""
+#echo ""
+#echo $sum
+#echo ""
 
 echo ""
 echo "What is the total?: "
