@@ -32,9 +32,9 @@ printf '%10s\n' $z;
 u=$[$u+1]
 done
 
-echo ""
-echo $sum
-echo ""
+# echo ""
+# echo $sum
+# echo ""
 
 echo ""
 echo "What is the total?: "
