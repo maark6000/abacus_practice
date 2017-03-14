@@ -1,0 +1,53 @@
+#!/bin/bash
+
+dif=0
+i=1
+x=0
+y=0
+sum=0
+tot=0
+
+echo "**** ABACUS PRACTICE!!! ****"
+echo ""
+echo "Enter your degree of difficulty (1-1000)"
+read dif
+#echo $dif
+
+echo "Add this column of numbers"
+echo ""
+
+for i in {1..10}
+do
+((x= $RANDOM % 256 ))
+((y= $RANDOM % 243 ))
+((z= ($x * $dif) + $y))
+#echo $z
+printf '%10s\n' $z;
+((sum=sum+z))
+done
+
+echo ""
+echo $sum
+echo ""
+
+echo ""
+echo "What is the total?: "
+read tot
+
+while (($sum != $tot))
+do
+if (($sum == $tot));
+then
+  break
+else
+  #echo "you are off by" $(($tot-$sum))
+  echo "NOPE!"
+  echo ""
+  echo "try again:"
+  read tot
+fi
+done
+
+echo ""
+echo "YOU ARE CORRECT!!!"
+echo ""
